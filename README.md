@@ -1,3 +1,3 @@
 # warm-ups
 
-Testing readme update.
+A repository for storing all Warm Up exercises for OC|CS cohort 12.
