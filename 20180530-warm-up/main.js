@@ -15,8 +15,8 @@ function renderStopWatch(stopWatch) {
 
   if (stopWatch.isStarted) {
     $button.textContent = 'Pause'
-  } else
-  {
+  }
+  else {
     $button.textContent = 'Start'
   }
 
