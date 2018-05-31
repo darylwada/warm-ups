@@ -4,10 +4,11 @@ function createElement(tagName, attributes, children) {
     $HTMLElement.setAttribute(key, attributes[key])
   }
 
-  children.forEach(function(child) {
-    if (typeof child === 'object') {
+  children.forEach(function (child) {
+    if (child instanceof Node) {
       $HTMLElement.appendChild(child)
-    } else {
+    }
+    else {
       $HTMLElement.textContent = child
     }
   })
