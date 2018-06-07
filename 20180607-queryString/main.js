@@ -33,6 +33,19 @@ var queryString = {
     return parsed
   },
 
+  parseRegEx: function(str) {
+    if (str[0] !== '?' || str.length < 2) {
+      return {}
+    }
+
+    var parsed = {}
+    var split = str.split(/[?=&]/).slice(1)
+    for (var i = 0; i < split.length; i += 2) {
+      parsed[split[i]] = split[i + 1]
+    }
+    return parsed
+  },
+
   stringify: function(obj) {
     var keys = Object.keys(obj)
     if (keys.length === 0) {
@@ -61,6 +74,18 @@ console.log( queryString.parse('?') )
 // => {}
 
 console.log( queryString.parse('') )
+// => {}
+
+console.log( queryString.parseRegEx('?view=catalog') )
+// => { view: 'catalog' }
+
+console.log( queryString.parseRegEx('?view=details&itemId=3') )
+// => { view: 'details', itemId: '3' }
+
+console.log( queryString.parseRegEx('?') )
+// => {}
+
+console.log( queryString.parseRegEx('') )
 // => {}
 
 console.log( queryString.stringify({ view: 'catalog' }) )
