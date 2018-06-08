@@ -15,7 +15,7 @@ function renderApp(state) {
 
 window.addEventListener('hashchange', (event) => {
   var hash = location.hash
-  var type = queryString.parse(hash)['?type']
+  var type = queryString.parse(hash.slice(1))['type']
   state.type = type
   renderApp(state)
 })
