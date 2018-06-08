@@ -33,6 +33,19 @@ var queryString = {
     return parsed
   },
 
+  // parseRegEx: function(str) {
+  //   if (str[0] !== '?' || str.length < 2) {
+  //     return {}
+  //   }
+  //
+  //   var parsed = {}
+  //   var split = str.split(/[?=&]/).slice(1)
+  //   for (var i = 0; i < split.length; i += 2) {
+  //     parsed[split[i]] = split[i + 1]
+  //   }
+  //   return parsed
+  // },
+
   parseRegEx: function(str) {
     if (str[0] !== '?' || str.length < 2) {
       return {}
