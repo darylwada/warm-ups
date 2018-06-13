@@ -2,11 +2,9 @@ function padLeft(string, padding, maxLength) {
   var fullPadding = ''
   var i = 0
   while (i < maxLength - string.length) {
-    for (var j = 0; j < padding.length; j++) {
-      if (i < maxLength - string.length) {
-        fullPadding += padding[j]
-        i++
-      }
+    for (var j = 0; j < padding.length && i < maxLength - string.length; j++) {
+      fullPadding += padding[j]
+      i++
     }
   }
   return fullPadding + string
@@ -25,11 +23,9 @@ function padRight(string, padding, maxLength) {
   var fullPadding = ''
   var i = 0
   while (i < maxLength - string.length) {
-    for (var j = 0; j < padding.length; j++) {
-      if (i < maxLength - string.length) {
-        fullPadding += padding[j]
-        i++
-      }
+    for (var j = 0; j < padding.length && i < maxLength - string.length; j++) {
+      fullPadding += padding[j]
+      i++
     }
   }
   return string + fullPadding
