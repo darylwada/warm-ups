@@ -1,19 +1,20 @@
 function createAccount() {
 
   const transactions = []
-  let balance = 0
 
   return {
     deposit(amount) {
-      balance += amount
       transactions.push({type: 'deposit', amount: amount})
     },
     withdraw(amount) {
-      balance -= amount
       transactions.push({type: 'withdrawal', amount: amount})
     },
     getBalance() {
-      return balance
+      return transactions.reduce((accumulator, transaction) => {
+        return transaction.type === 'deposit'
+          ? accumulator + transaction.amount
+          : accumulator - transaction.amount
+      }, 0)
     },
     getHistory() {
       return transactions.map(transaction => {
