@@ -23,8 +23,10 @@ function createDOM(tagName) {
 }
 
 console.log( createDOM('div') )
-console.log( createDOM('div').attribute('type', 'text') )  // value of {this} is set to return object of createDOM
-console.log( createDOM('div').attribute('type', 'text').element() )  // value of {this} is set to return object of createDOM.attribute()}
+console.log( createDOM('div').attribute('type', 'text') )  // value of {this} is set to return object of createDOM('div')
+console.log( createDOM('div').attribute('type', 'text').element() )  // value of {this} is set to return object of createDOM('div').attribute('type', 'text')
+/* In the returned object of createDOM, every method sees the same $element due to closure. Every time a method is chained, it returns {this}
+because {this} is the returned createDOM object, within which every method still references the same $element */
 
 const $div = createDOM('div')
   .element()
