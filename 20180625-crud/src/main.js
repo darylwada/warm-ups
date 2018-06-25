@@ -6,8 +6,8 @@ function createCollection() {
   return {
     create(inputObj) {
       const currentID = nextId
-      nextId++
       const item = Object.assign({}, {id: currentID}, inputObj)
+      nextId++
       items.push(item)
       return item
     },
@@ -35,14 +35,14 @@ function createCollection() {
     },
 
     deleteById(id) {
-      let deleted = null
       for (let i = 0; i < items.length; i++) {
         if (items[i].id === id) {
-          deleted = items[i]
+          const deleted = items[i]
           items.splice(i, 1)
+          return deleted
         }
       }
-      return deleted
+      return null
     }
   }
 
