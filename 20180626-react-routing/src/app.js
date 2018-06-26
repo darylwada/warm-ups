@@ -22,6 +22,8 @@ export default class App extends Component {
       this.setState({ type: type })
     })
 
+    window.dispatchEvent(new Event('hashchange'))
+
   }
   render() {
     const { type } = this.state
