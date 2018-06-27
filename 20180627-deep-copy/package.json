@@ -1,0 +1,15 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "watch": "browser-sync start -s -c browser-sync.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "2.24.5"
+  }
+}
