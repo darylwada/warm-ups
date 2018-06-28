@@ -4,7 +4,7 @@ function deepEquals(x, y) {
 
   if (x instanceof Date && y instanceof Date) return x.toJSON() === y.toJSON()
 
-  if (Array.isArray(x) && Array.isArray(y)) {
+  if (x instanceof Array && y instanceof Array) {
     return x.length === y.length
       ? x.every((element, i) => deepEquals(element, y[i]))
       : false
